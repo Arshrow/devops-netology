@@ -12,3 +12,6 @@
 * все файлы, которые оканчиваются на _override.tf и _override.tf.json
 * все файлы с расширением .terraformrc
 * все файлы под назвавнием terraform.rc
+
+
+IDE
