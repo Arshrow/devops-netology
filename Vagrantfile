@@ -31,7 +31,6 @@ Vagrant.configure(2) do |config|
         vb.name = machine[:hostname]
       end
       node.vm.provision "ansible" do |setup|
-        setup.compatibility_mode = "2.0"
         setup.inventory_path = INVENTORY_PATH
         setup.playbook = "./provision.yml"
         setup.become = true
