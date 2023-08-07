@@ -4,7 +4,7 @@ ISO = "bento/ubuntu-20.04"
 NET = "192.168.56."
 DOMAIN = ".netology"
 HOST_PREFIX = "server"
-INVENTORY_PATH = "../vagrant/inventory"
+INVENTORY_PATH = "./inventory"
 
 servers = [
   {
@@ -33,7 +33,7 @@ Vagrant.configure(2) do |config|
       node.vm.provision "ansible" do |setup|
         setup.compatibility_mode = "2.0"
         setup.inventory_path = INVENTORY_PATH
-        setup.playbook = "../vagrant/provision.yml"
+        setup.playbook = "./provision.yml"
         setup.become = true
         setup.extra_vars = { ansible_user: 'vagrant' }
       end
