@@ -32,7 +32,7 @@ Vagrant.configure(2) do |config|
       end
       node.vm.provision "ansible" do |setup|
         setup.inventory_path = INVENTORY_PATH
-        setup.playbook = "./provision.yml"
+        setup.playbook = "./playbook.yml"
         setup.become = true
         setup.extra_vars = { ansible_user: 'vagrant' }
       end
