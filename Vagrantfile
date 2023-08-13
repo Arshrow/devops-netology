@@ -18,7 +18,7 @@ servers = [
 ]
 
 Vagrant.configure(2) do |config|
-  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder ".", "/vagrant", disabled: false
   servers.each do |machine|
     config.vm.define machine[:hostname] do |node|
       node.vm.box = ISO
@@ -31,7 +31,6 @@ Vagrant.configure(2) do |config|
         vb.name = machine[:hostname]
       end
       node.vm.provision "ansible" do |setup|
-        setup.compatibility_mode = "2.0"
         setup.inventory_path = INVENTORY_PATH
         setup.playbook = "./playbook.yml"
         setup.become = true
